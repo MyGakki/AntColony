@@ -1,13 +1,2 @@
 ﻿  TSP.cpp
-  ant.cpp
-c:\users\hopepower\source\repos\antcolony\antcolony\ant.cpp(13): warning C4244: “初始化”: 从“float”转换到“int”，可能丢失数据
-c:\users\hopepower\source\repos\antcolony\antcolony\ant.cpp(16): warning C4244: “=”: 从“float”转换到“int”，可能丢失数据
-c:\users\hopepower\source\repos\antcolony\antcolony\ant.cpp(27): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-c:\users\hopepower\source\repos\antcolony\antcolony\ant.cpp(39): warning C4101: “i”: 未引用的局部变量
-c:\users\hopepower\source\repos\antcolony\antcolony\ant.cpp(79): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-  graph.cpp
-  main.cpp
-c:\users\hopepower\source\repos\antcolony\antcolony\main.cpp(6): warning C4326: “main”的返回类型应为“int”而非“void”
-  正在生成代码...
-c:\users\hopepower\source\repos\antcolony\antcolony\ant.cpp(36): warning C4715: “wheelSelection”: 不是所有的控件路径都返回值
   AntColony.vcxproj -> C:\Users\HopePower\source\repos\AntColony\Debug\AntColony.exe

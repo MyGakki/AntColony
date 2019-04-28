@@ -1,6 +1,6 @@
 #pragma once
 #define ANT_NUM 15										//蚂蚁数量
-#define CITY_NUM 16											//城市数量
+//#define CITY_NUM 16											//城市数量
 #define TOTAL_TURN 150										//迭代次数
 #define ALPHA 1						        //信息素作用
 #define BETA 4													//启发因子作用

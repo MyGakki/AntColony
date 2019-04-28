@@ -15,18 +15,26 @@ void remove(vector<int> &vec, int n) {
 void TSPSolution(graph* G) {
 	int i, j;
 	srand((unsigned)time(0));
-	for (i = 0; i < CITY_NUM; i++)
-		for (j = i; j < CITY_NUM; j++)
+	for (i = 0; i < G->cityNum; i++)
+		for (j = i; j < G->cityNum; j++)
 			G->pheromone_table[j][i] = G->pheromone_table[i][j] = FAVOR;
-	int route[ANT_NUM][CITY_NUM + 1];
+	//int route[ANT_NUM][CITY_NUM + 1];
+	vector<vector<int> > route;
+	for (i = 0; i < G->cityNum; i++) {
+		vector<int> tempRoute;
+		for (j = 0; j < G->cityNum + 1; j++) {
+			tempRoute.push_back(0);
+		}
+		route.push_back(tempRoute);
+	}
 	float length[ANT_NUM] = { 0 };
 	int now, next;
 	for (int count = 0; count < TOTAL_TURN; count++) {
 		for (i = 0; i < ANT_NUM; i++)
 			length[i] = 0;
 		for (i = 0; i < ANT_NUM; i++) {
-			vector<int> allow(CITY_NUM);
-			for (j = 0; j < CITY_NUM; j++) {
+			vector<int> allow(G->cityNum);
+			for (j = 0; j < G->cityNum; j++) {
 				allow[j] = j;
 				route[i][j] = -1;
 			}
@@ -50,15 +58,16 @@ void TSPSolution(graph* G) {
 
 	int r[17] = {1 ,14, 13, 12, 7, 6 ,15, 5, 11, 9, 10, 16, 3, 2, 4, 8, 1};
 	float l = 0;
-	cout << "1 -> ";
-	for (i = 0; i < CITY_NUM; i++) {
-		cout << r[i + 1] << "-> ";
+	cout << "1 ->";
+	for (i = 0; i < G->cityNum; i++) {
+		cout << r[i + 1] << "->";
 		l += G->edge[r[i] - 1][r[i+1] - 1];
 	}
+
 	cout <<"shortest path length£º"<< l<<endl;
 	for (i = 0; i < ANT_NUM; i++) {
 		cout << "======length" << i << ":" << length[i]<<"======\n";
-		for (j = 0; j < CITY_NUM + 1; j++) {
+		for (j = 0; j < G->cityNum + 1; j++) {
 			if (route[i][j] == -1)
 				break;
 			else
